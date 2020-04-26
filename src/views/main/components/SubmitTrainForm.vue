@@ -6,9 +6,6 @@
     <el-form-item label="Data">
       <data-picker v-model="data"/>
     </el-form-item>
-    <el-form-item v-if="data" label="Attributes">
-      <attributes-picker v-model="attributes" :data-id="data.id"/>
-    </el-form-item>
     <div class="train-btn-wrapper">
       <el-button class="train-btn" type="primary">TRAIN IT!</el-button>
     </div>
@@ -19,11 +16,10 @@
     import { Component, Prop, Vue } from 'vue-property-decorator';
     import DataPicker from "@/views/main/components/DataPicker.vue";
     import {DataItem} from "@/apis/types/data";
-    import AttributesPicker from "@/views/main/components/AttributesPicker.vue";
     import MethodPicker from "@/views/main/components/MethodPicker.vue";
     import {MethodItem} from "@/apis/types/method";
     @Component({
-        components: {MethodPicker, AttributesPicker, DataPicker}
+        components: {MethodPicker, DataPicker}
     })
     export default class MainPage extends Vue {
         method: MethodItem | null = null;

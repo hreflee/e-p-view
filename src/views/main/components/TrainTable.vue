@@ -4,9 +4,6 @@
     <el-table-column label="File">
       <template slot-scope="{row}">
         <p>{{row.data.fileName}} / {{row.data.uploadAt}}</p>
-        <div>
-          <el-tag class="attr-tags" v-for="attr in row.selectedAttrs">{{attr}}</el-tag>
-        </div>
       </template>
     </el-table-column>
     <el-table-column label="Result">
@@ -19,7 +16,7 @@
         </div>
         <div class="result-cell" v-if="row.status === 'FAIL'">
           <div class="result">
-            <span><i class="el-icon-error"></i>Error</span>
+            <span><i class="el-icon-error"/>Error</span>
           </div>
           <div class="actions">
             <retrain-btn :train-item="row"/>
@@ -28,7 +25,7 @@
         </div>
         <div class="result-cell" v-if="row.status === 'SUCCESS'">
           <div class="result">
-            <p>Complete at: {{row.completeAt}}</p>
+            <p><i class="el-icon-time"/>{{row.completeAt}}</p>
             <p v-if="row.MAPE">MAPE: {{row.MAPE}}</p>
             <p v-if="row.RMSE">RMSE: {{row.RMSE}}</p>
           </div>
@@ -39,7 +36,6 @@
         </div>
       </template>
     </el-table-column>
-
   </el-table>
 </template>
 
