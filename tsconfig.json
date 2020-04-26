@@ -11,12 +11,17 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "typeRoots": ["./node_modules/@types", "./node_modules"],
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "element-ui/types"
     ],
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@axios": [
+        "src/plugins/axios.ts"
       ]
     },
     "lib": [
